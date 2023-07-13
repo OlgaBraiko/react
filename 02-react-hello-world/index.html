@@ -7,25 +7,23 @@
     <title>React Hello World</title>
   </head>
   <body>
-    <div id="app"></div>
-    <script
-      src="https://unpkg.com/react@18/umd/react.development.js"
-      crossorigin
-    ></script>
-    <script
-      src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
-      crossorigin
-    ></script>
-    <script>
-      const helloWorldHeading = React.createElement(
-        'h1',
-        null,
-        'Hello from React'
-      )
+    <div id="react"></div>
+    <div id="vanilaApp"></div>
 
-      const container = document.getElementById('app')
-      const root = ReactDOM.createRoot(container)
-      root.render(helloWorldHeading)
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src=" https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script>
+      const helloWorld = React.createElement("h1", null, "Hello from React"); //создаем елемент
+
+      const container = document.getElementById("react"); //после создания обертки находим ее и присваиваем переменной
+      const root = ReactDOM.createRoot(container); //создаем объект в реакт дом
+      root.render(helloWorld); //вызываем метод рендер
+    </script>
+    <script>
+      const heading = document.createElement("h1");
+      heading.textContent = "hello fron vanila js";
+      console.log(heading);
+      document.getElementById("vanilaApp").appendChild(heading);
     </script>
   </body>
 </html>
