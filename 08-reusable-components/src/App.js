@@ -1,6 +1,6 @@
-import './App.css'
-import MyComponent from './components/MyComponent'
-import OtherComponent from './components/OtherComponent'
+import "./App.css";
+import MyComponent from "./components/MyComponent";
+import OtherComponent from "./components/OtherComponent";
 
 function App() {
   return (
@@ -11,7 +11,7 @@ function App() {
       <OtherComponent />
       <MyComponent />
     </div>
-  )
+  );
 }
 
-export default App
+export default App;

@@ -1,10 +1,9 @@
 function MyComponent() {
   return (
     <div>
-      <h1>Hello from the reusable component</h1>
-      <button>Like!</button>
+      <h1>Hello from component </h1>
+      <buttun>Like!</buttun>
     </div>
-  )
+  );
 }
-
-export default MyComponent
+export default MyComponent;

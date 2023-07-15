@@ -1,9 +1,11 @@
 function OtherComponent() {
   return (
     <div>
-      <p>Hello from React</p>
+      <p>
+        Hello hello hello hello hello hello hello hello hello hello hello hello
+        hello hello hello hello hello hello
+      </p>
     </div>
-  )
+  );
 }
-
-export default OtherComponent
+export default OtherComponent;
