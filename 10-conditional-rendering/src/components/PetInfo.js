@@ -1,11 +1,10 @@
 function PetInfo(props) {
-  const { animal, age, hasPet } = props
-
-  return hasPet ? (
-    <h1>{`My ${animal} is ${age} years old`}</h1>
-  ) : (
-    <h2>I don't have an animal</h2>
-  )
+  const { animal, age, hasPet } = props; //наличие питомца через тернарный оператор
+  const text = hasPet
+    ? ` My ${animal} is ${age} years old`
+    : "I don't have animal"; //добавили слеш чтобы убрать ошибку
+  //переменную текст используем вместо строки в заголовке h1
+  return <h1>{text}</h1>;
 }
 
-export default PetInfo
+export default PetInfo;
