@@ -1,14 +1,14 @@
-import { useState } from 'react'
-import './App.css'
-import Button from './components/Button'
-import Counter from './components/Counter'
+import { useState } from "react"; // сначала пишем внешние импорты
+import Counter from "./components/Counter";
+import Button from "./components/Button";
+import "./App.css";
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [count, setCount] = useState(0); // передаем первый элемент в дочерний компонент
+  //сохраняем состояние в родительском компоненте, чтобы влиять на него из дочерних
   const incrementCount = () => {
-    setCount(count + 1)
-  }
-
+    setCount(count + 1);
+  };
   return (
     <div className="App">
       <Counter count={count} />
@@ -17,7 +17,7 @@ function App() {
       <Button onClick={incrementCount} />
       <Button onClick={incrementCount} />
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
