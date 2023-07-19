@@ -12,3 +12,11 @@ function App() {
 }
 
 export default App;
+
+function App2() {
+  return (
+    <div className="App">
+      <PetInfo2 animal="cat" age={5} />
+    </div>
+  );
+}
