@@ -1,15 +1,12 @@
 import "./App.css";
-import Person from "./components/Persons";
-import persons from "./data/persons";
+import Persons from "./components/Persons";
 
 //итерация массива объектов
 
 function App() {
   return (
     <div className="App">
-      {persons.map((person) => {
-        return <Person key={person.id} {...person} />;
-      })}
+      <Persons />
     </div>
   );
 }
