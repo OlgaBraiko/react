@@ -8,19 +8,12 @@ function App() {
   return (
     <div className="App">
       {persons.map((person) => {
-        const { id, firsName, lastName, email, img } = person;
-        return (
-          <Person
-            id={id}
-            firsName={firsName}
-            lastName={lastName}
-            email={email}
-            img={img}
-          />
-        );
+        return <Person key={person.id} {...person} />;
       })}
     </div>
   );
 }
 
 export default App;
+
+//получаем объект с помощью спред опрератора и добавляем уникальный ключ key
