@@ -1,35 +1,30 @@
-import { useState } from 'react'
-import './App.css'
-import Button from './components/Button'
-import Counter from './components/Counter'
+import Button from "./components/Button";
+import Counter from "./components/Counter";
+import { useState } from "react";
+import "./App.css";
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [count, setCount] = useState(0);
   const incrementCount = () => {
-    setCount(count + 1)
-  }
-  const resetCount = () => {
-    setCount(0)
-  }
+    setCount(count + 1);
+  };
 
-  const buttonStyle = { backgroundColor: 'lightgreen' }
+  const buttonStyle = { backgroundColor: "lightgreen" }; //объект js
 
   return (
     <div className="App">
-      <Counter count={count} />
-      <Button onClick={incrementCount} />
-      <Button onClick={incrementCount} />
-      <Button onClick={incrementCount} />
-      <Button onClick={incrementCount} />
-      {count > 0 && (
+      <div>
+        <Counter count={count} />
+        <Button onClick={incrementCount} />
+        <Button onClick={incrementCount} />
+        <Button onClick={incrementCount} />
+        <Button onClick={incrementCount} />
         <div>
-          <button style={buttonStyle} onClick={resetCount}>
-            Reset
-          </button>
+          <button style={buttonStyle}>Reset</button>
         </div>
-      )}
+      </div>
     </div>
-  )
+  );
 }
-
-export default App
+//добавление стилей
+export default App;
