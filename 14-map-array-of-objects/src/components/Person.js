@@ -1,5 +1,5 @@
 function Person(props) {
-  const { firstName, lastName, email, img } = props
+  const { firstName, lastName, email, img } = props;
 
   return (
     <div className="card">
@@ -9,7 +9,8 @@ function Person(props) {
       </h3>
       <h4>{email}</h4>
     </div>
-  )
+  );
+  //отдельные карточки jsx
 }
 
-export default Person
+export default Person;
