@@ -10,7 +10,9 @@ function App() {
   };
 
   const buttonStyle = { backgroundColor: "lightgreen" }; //объект js
-
+  const resetCount = () => {
+    setCount(0); //фун-ия для кнопки reset обнуление счетчика
+  };
   return (
     <div className="App">
       <div>
@@ -20,11 +22,14 @@ function App() {
         <Button onClick={incrementCount} />
         <Button onClick={incrementCount} />
         <div>
-          <button style={buttonStyle}>Reset</button>
+          <button style={buttonStyle} onClick={resetCount}>
+            Reset
+          </button>
         </div>
       </div>
     </div>
   );
 }
 //добавление стилей
+//добавление обработчика клик
 export default App;
