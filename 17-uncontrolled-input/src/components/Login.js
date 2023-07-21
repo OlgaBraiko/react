@@ -1,19 +1,19 @@
 function Login() {
-  function handleFormSubmit(event) {
-    event.preventDefault()
+  function handleForm(event) {
+    event.preventDefault();
 
     const userData = {
       username: event.target.username.value,
       password: event.target.password.value,
-    }
-    console.log(userData)
-    alert(JSON.stringify(userData))
+    };
+    console.log(userData);
+    alert(JSON.stringify.userData);
   }
 
   return (
     <>
-      <h1>Login Form</h1>
-      <form onSubmit={handleFormSubmit}>
+      <h1>Login form</h1>
+      <form onSubmit={handleForm}>
         <label>
           Username:
           <input type="text" name="username" />
@@ -25,7 +25,7 @@ function Login() {
         <button type="submit">Login</button>
       </form>
     </>
-  )
+  );
 }
 
-export default Login
+export default Login;
