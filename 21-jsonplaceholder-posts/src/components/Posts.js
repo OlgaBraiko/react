@@ -1,23 +1,27 @@
-import { useState, useEffect } from 'react'
-import Post from './Post'
+import { useState, useEffect } from "react";
+import Post from "./Post";
 
-const API_URL = 'https://jsonplaceholder.typicode.com/posts'
+const API_URL = "https://jsonplaceholder.typicode.com/posts";
 
 function Posts() {
-  const [posts, setPosts] = useState([])
-  const [error, setError] = useState('')
-  const [isLoading, setIsLoading] = useState(true)
+  const [posts, setPosts] = useState([]);
+  const [error, setError] = useState(""); //в error записывается состояние ошибки
+  const [isLoading, setIsLoading] = useState(true); //показываем юзеру  статус загрузки сайта
 
   useEffect(() => {
     fetch(API_URL)
-      .then((res) => res.json())
+      .then((response) => response.json())
       .then((posts) => setPosts(posts))
       .catch((error) => setError(error.message))
-      .finally(() => setIsLoading(false))
-  }, [])
+      .finally(() => setIsLoading(false)); //завершили процесс загрузки данных
+  }, []);
+
+  if (isLoading) {
+    return <h1>Loading...</h1>;
+  }
 
   if (error) {
-    return <h1>Error: {error}</h1>
+    return <h1>Error:{error}</h1>;
   }
 
   return (
@@ -30,7 +34,6 @@ function Posts() {
         posts.map((post) => <Post key={post.id} {...post} />)
       )}
     </>
-  )
+  );
 }
-
-export default Posts
+export default Posts;
