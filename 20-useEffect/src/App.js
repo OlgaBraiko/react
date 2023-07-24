@@ -1,19 +1,17 @@
-import { useEffect, useState } from 'react'
-import './App.css'
+import { useState, useEffect } from "react";
+import "./App.css";
 
 function App() {
-  const [todo, setTodo] = useState(null)
-
+  const [todo, setTodo] = useState(null); //todo=null
   useEffect(() => {
-    fetch('https://jsonplaceholder.typicode.com/todos/5')
+    fetch("https://jsonplaceholder.typicode.com/todos/1")
       .then((response) => response.json())
-      .then((json) => setTodo(json))
-  }, [])
+      .then((json) => setTodo(json)); //здесь у todo меняется значение на объект json
+  }, []);
 
-  console.log('App rendered')
-  console.log(todo)
-
-  return <div className="App">{todo && <h1>{todo.title}</h1>}</div>
+  return <div className="App">{todo && <h1>{todo.title}</h1>}</div>; //выведет значение если todo не null
 }
 
-export default App
+export default App;
+
+//чтобы избежать бесконечный цикл компонента применяется useEffect
