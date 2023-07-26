@@ -1,26 +1,26 @@
-import { useState, useEffect } from 'react'
-import Post from './Post'
+import { useState, useEffect } from "react";
+import Post from "./Post";
 
-const API_URL = 'https://jsonplaceholder.typicode.com/posts'
+const API_URL = "https://jsonplaceholder.typicode.com/posts";
 
 function Posts() {
-  const [posts, setPosts] = useState([])
-  const [error, setError] = useState('')
-  const [isLoading, setIsLoading] = useState(true)
+  const [posts, setPosts] = useState([]);
+  const [error, setError] = useState("");
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    const fetchData = async () => {
+    //  фун-ия IIFE
+    (async function () {
       try {
-        const res = await fetch(API_URL)
-        const posts = await res.json()
-        setPosts(posts)
+        const res = await fetch(API_URL);
+        const posts = await res.json();
+        setPosts(posts); //после получения массива меняется состояние компонента
       } catch (error) {
-        setError(error.message)
+        setError(error.message);
       }
-      setIsLoading(false)
-    }
-    fetchData()
-  }, [])
+      setIsLoading(false); //finally
+    })();
+  }, []);
 
   // useEffect(() => {
   //   fetch(API_URL)
@@ -31,7 +31,7 @@ function Posts() {
   // }, [])
 
   if (error) {
-    return <h1>Error: {error}</h1>
+    return <h1>Error: {error}</h1>;
   }
 
   return (
@@ -44,7 +44,7 @@ function Posts() {
         posts.map((post) => <Post key={post.id} {...post} />)
       )}
     </>
-  )
+  );
 }
 
-export default Posts
+export default Posts;
