@@ -11,11 +11,15 @@ function App() {
     setTodos([...todos, text]); //разбираем массив todos на элементы и добавляем текст
   };
 
+  const deleteTodoHandler = (index) => {
+    setTodos(todos.filter((_, idx) => idx !== index)); //удаление выполненой задачи, фильтр оставляет элемент если выражение истина
+  };
+
   return (
     <div className="App">
       <h1>Todo App</h1>
       <TodoForm addTodo={addTodoHandler} />
-      <TodoList todos={todos} />
+      <TodoList todos={todos} deleteTodo={deleteTodoHandler} />
     </div>
   );
 }
