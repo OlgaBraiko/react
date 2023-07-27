@@ -1,6 +1,5 @@
 import { useState } from "react";
-import styles from "./TodoForm.modules.css";
-console.log(styles);
+//import styles from "./Todos/Todo.form.modules.css";
 
 function TodoForm({ addTodo }) {
   //св-во доступно и исп при сабмите
@@ -13,14 +12,16 @@ function TodoForm({ addTodo }) {
   };
 
   return (
-    <form onSubmit={onSubmitHandler}>
-      <input
-        placeholder="Enter new todo"
-        value={text}
-        onChange={(e) => setText(e.target.value)}
-      />
-      <button type="submit">Submit</button>
-    </form>
+    <div className={styles.todoFormContainer}>
+      <form onSubmit={onSubmitHandler}>
+        <input
+          placeholder="Enter new todo"
+          value={text}
+          onChange={(e) => setText(e.target.value)}
+        />
+        <button type="submit">Submit</button>
+      </form>
+    </div>
   );
 }
 
