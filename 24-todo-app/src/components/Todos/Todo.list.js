@@ -1,5 +1,5 @@
 import Todo from "./Todo";
-import styles from "./Todo.list.modules.css";
+import styles from "./Todo.list.module.css";
 
 function TodoList({ todos, deleteTodo }) {
   return (
