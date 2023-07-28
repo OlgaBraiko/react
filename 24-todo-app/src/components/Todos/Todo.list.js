@@ -1,14 +1,19 @@
 import Todo from "./Todo";
 import styles from "./Todo.list.module.css";
 
-function TodoList({ todos, deleteTodo }) {
+function TodoList({ todos, deleteTodo, toggleTodo }) {
   return (
     <div className={styles.todoListContainer}>
       {!todos.length && <h2>Todo list is empty</h2>}
-      {todos.map((todo, index) => (
-        <Todo key={index} todo={todo} index={index} deleteTodo={deleteTodo} />
+      {todos.map((todo) => (
+        <Todo
+          key={todo.id}
+          todo={todo}
+          deleteTodo={deleteTodo}
+          toggleTodo={toggleTodo}
+        />
       ))}
-    </div> //исп индекс так как нет ничего уникального
+    </div>
   );
 }
 
