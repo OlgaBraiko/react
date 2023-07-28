@@ -1,16 +1,19 @@
 import { RiDeleteBin2Line, RiRefreshLine } from "react-icons/ri";
 import Button from "../UI/Button";
-function TodoActions() {
+
+function TodosActions({ resetTodos, deleteCompletedTodos }) {
   return (
     <>
-      <Button title="Reset Todos">
+      <Button title="Reset Todos" onClick={resetTodos}>
         <RiRefreshLine />
       </Button>
-      <button title="Clear Completed Todos">
+      <Button title="Clear Completed Todos" onClick={deleteCompletedTodos}>
         <RiDeleteBin2Line />
-      </button>
+      </Button>
     </>
   );
 }
 
-export default TodoActions;
+export default TodosActions;
+//благодаря св-ву children можно передавать компоненту Button
+// дочерние элементы (например иконки)

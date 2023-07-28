@@ -3,8 +3,7 @@ import { v4 as uuidv4 } from "uuid"; //импорт уникального ид�
 import "./App.css";
 import TodoForm from "./components/Todos/Todo.form";
 import TodoList from "./components/Todos/Todo.list";
-import TodoActions from "./components/Todos/TodosAction";
-
+import TodosActions from "./components/Todos/TodosAction";
 function App() {
   const [todos, setTodos] = useState([]);
 
@@ -40,11 +39,24 @@ function App() {
     //тк как объект ссылочный тип и мы должны создавать новые состояния
   };
 
+  const resetTodosHandler = () => {
+    //очищает приложение  удаляя все задачи
+    setTodos([]);
+  };
+
+  const deleteCompletedTodosHandler = () => {
+    //удаляет только завершенные задачи
+    setTodos(todos.filter((todo) => !todo.isCompleted));
+  };
+
   return (
     <div className="App">
       <h1>Todo App</h1>
       <TodoForm addTodo={addTodoHandler} />
-      <TodoActions />
+      <TodosActions
+        resetTodos={resetTodosHandler}
+        deleteCompletedTodos={deleteCompletedTodosHandler}
+      />
       <TodoList
         todos={todos}
         deleteTodo={deleteTodoHandler}
@@ -58,3 +70,6 @@ export default App;
 //создаем уникальные идентификаторы, и вместо сроки добавляем объект
 //св-ва text,id,статус задачи теперь в объекте todo
 // вместо массива строк в компонент передается массив объектов
+
+//после вызова ф-ий reset и delete они становятся доступны в TodoActions
+//переходим в этот компонент и привязываем их к св-вам onClick
