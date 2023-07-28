@@ -11,7 +11,7 @@ function App() {
   const addTodoHandler = (text) => {
     const newTodo = {
       text,
-      isComleted: false, //новая задача
+      isCompleted: false, //новая задача
       id: uuidv4(), //генерация id
     };
 
@@ -29,7 +29,7 @@ function App() {
     setTodos(
       todos.map((todo) => {
         return todo.id === id
-          ? { ...todo, isComleted: !todo.isComleted }
+          ? { ...todo, isCompleted: !todo.isCompleted }
           : { ...todo };
       })
     );
