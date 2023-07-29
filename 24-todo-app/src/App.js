@@ -53,10 +53,13 @@ function App() {
     <div className="App">
       <h1>Todo App</h1>
       <TodoForm addTodo={addTodoHandler} />
-      <TodosActions
-        resetTodos={resetTodosHandler}
-        deleteCompletedTodos={deleteCompletedTodosHandler}
-      />
+      {!!todos.length && ( //показываем кнопки только если есть хотя бы одна задача
+        <TodosActions
+          resetTodos={resetTodosHandler}
+          deleteCompletedTodos={deleteCompletedTodosHandler}
+        />
+      )}
+
       <TodoList
         todos={todos}
         deleteTodo={deleteTodoHandler}
