@@ -1,13 +1,13 @@
 import styles from "./Button.module.css";
 
-function Button({ onClick, children, title, disabled = false }) {
+function Button(props) {
+  const { children, disabled = false } = props;
   //св-ва компонента
 
   return (
     <button
+      {...props} //делим на св-ва  и исп из компонента TodoForm
       className={styles.button}
-      onClick={onClick}
-      title={title}
       disabled={disabled}>
       {children}
     </button>
