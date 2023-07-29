@@ -49,12 +49,17 @@ function App() {
     setTodos(todos.filter((todo) => !todo.isCompleted));
   };
 
+  //находим завершенные задачи, метод вернет массив с завершенными задачами или пустой
+  //исп length чтобы узнать кол-во завершенных задач
+  const completedTodosCount = todos.filter((todo) => todo.isCompleted).length;
+
   return (
     <div className="App">
       <h1>Todo App</h1>
       <TodoForm addTodo={addTodoHandler} />
       {!!todos.length && ( //показываем кнопки только если есть хотя бы одна задача
         <TodosActions
+          completedTodosExist={!!completedTodosCount} //конвертируем в логическое значение
           resetTodos={resetTodosHandler}
           deleteCompletedTodos={deleteCompletedTodosHandler}
         />
