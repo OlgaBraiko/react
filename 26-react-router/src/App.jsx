@@ -4,13 +4,14 @@ import About from "./components/About";
 import Contacts from "./components/Contacts";
 import NotFound from "./components/NotFound";
 import "./App.css";
+import MainLayout from "./layouts/MainLayout";
 
 function App() {
   return (
     <BrowserRouter>
       <div className="App"></div>
       <Routes>
-        <Route path="/" element={<Home />}>
+        <Route path="/" element={<MainLayout />}>
           <Route path="about" element={<About />} />
           <Route path="contacts" element={<Contacts />} />
           <Route path="*" element={<NotFound />} />
@@ -24,3 +25,4 @@ export default App;
 //три маршрута с тремя разными компонентами
 //последний маршрут по умолчанию
 //три маршрута вложены в маршрут Home
+//MainLayout отобразит все компоненты на своей странице каждый
