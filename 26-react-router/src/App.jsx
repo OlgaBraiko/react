@@ -10,10 +10,11 @@ function App() {
     <BrowserRouter>
       <div className="App"></div>
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="about" element={<About />} />
-        <Route path="contacts" element={<Contacts />} />
-        <Route path="*" element={<NotFound />} />
+        <Route path="/" element={<Home />}>
+          <Route path="about" element={<About />} />
+          <Route path="contacts" element={<Contacts />} />
+          <Route path="*" element={<NotFound />} />
+        </Route>
       </Routes>
     </BrowserRouter>
   );
@@ -22,3 +23,4 @@ function App() {
 export default App;
 //три маршрута с тремя разными компонентами
 //последний маршрут по умолчанию
+//три маршрута вложены в маршрут Home
