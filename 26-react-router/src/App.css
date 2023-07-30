@@ -15,7 +15,14 @@ button {
   margin: 20px;
   cursor: pointer;
 }
-.active {
+
+/*Used by default with NavLink*/
+/*.active {
+  color: lemonchiffon;
+  text-decoration: none;
+}*/
+
+.activeLink {
   color: lemonchiffon;
   text-decoration: none;
 }
